@@ -7,10 +7,13 @@ import android.os.Handler
 import android.os.Looper
 import android.view.KeyEvent
 import android.view.View
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
@@ -27,7 +30,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var repository: M3uRepository
 
     private val handler = Handler(Looper.getMainLooper())
+    private val hideOverlayRunnable = Runnable {
+        binding.channelOverlay.isVisible = false
+    }
+
     private var player: ExoPlayer? = null
+    private var lastBackPressedAt = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         setupPlayer()
         setupDrawer()
         setupList()
+        setupBackHandler()
         showLoadingThenStart()
     }
 
@@ -47,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         player = ExoPlayer.Builder(this).build().also { exoPlayer ->
             binding.playerView.player = exoPlayer
             exoPlayer.repeatMode = Player.REPEAT_MODE_ALL
+            exoPlayer.videoScalingMode = C.VIDEO_SCALING_MODE_SCALE_TO_FIT
         }
     }
 
@@ -65,8 +75,31 @@ class MainActivity : AppCompatActivity() {
         binding.channelList.adapter = channelAdapter
     }
 
+    private fun setupBackHandler() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                when {
+                    binding.drawerLayout.isDrawerOpen(GravityCompat.START) -> {
+                        binding.drawerLayout.closeDrawer(GravityCompat.START)
+                    }
+
+                    shouldExitApp() -> finish()
+                    else -> {
+                        lastBackPressedAt = System.currentTimeMillis()
+                        Toast.makeText(
+                            this@MainActivity,
+                            getString(R.string.exit_app_tip),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            }
+        })
+    }
+
     private fun showLoadingThenStart() {
         binding.loadingOverlay.isVisible = true
+        binding.channelOverlay.isVisible = false
         binding.currentChannel.text = getString(R.string.default_playing_title)
         loadDefaultChannels()
         handler.postDelayed({
@@ -78,7 +111,6 @@ class MainActivity : AppCompatActivity() {
         val channels = repository.loadDefaultChannels()
         channelAdapter.submitList(channels)
         binding.emptyView.isVisible = channels.isEmpty()
-        binding.channelCount.text = getString(R.string.channel_count, channels.size)
 
         if (channels.isNotEmpty()) {
             playChannel(channels.first())
@@ -102,7 +134,14 @@ class MainActivity : AppCompatActivity() {
             prepare()
             playWhenReady = true
         }
-        binding.currentChannel.text = channel.name
+        showChannelOverlay(channel.name)
+    }
+
+    private fun showChannelOverlay(channelName: String) {
+        binding.currentChannel.text = channelName
+        binding.channelOverlay.isVisible = true
+        handler.removeCallbacks(hideOverlayRunnable)
+        handler.postDelayed(hideOverlayRunnable, 5000L)
     }
 
     private fun focusSelectedChannel() {
@@ -119,6 +158,10 @@ class MainActivity : AppCompatActivity() {
                 ?.requestFocus()
                 ?: binding.channelList.requestFocus()
         }
+    }
+
+    private fun shouldExitApp(): Boolean {
+        return System.currentTimeMillis() - lastBackPressedAt < 2000L
     }
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {

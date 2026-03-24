@@ -16,8 +16,9 @@
             android:layout_height="match_parent"
             android:background="@color/player_surface_bottom"
             android:keepScreenOn="true"
+            app:resize_mode="fit"
             app:show_shuffle_button="false"
-            app:surface_type="texture_view"
+            app:surface_type="surface_view"
             app:use_controller="false" />
 
         <LinearLayout
@@ -42,14 +43,6 @@
                 android:textColor="@color/text_primary"
                 android:textSize="28sp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/channelCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp" />
         </LinearLayout>
 
         <FrameLayout
@@ -112,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:text="@string/channel_list_hint"
-            android:textColor="@color/text_secondary"
+            android:textColor="@color/text_primary"
             android:textSize="14sp" />
 
         <TextView

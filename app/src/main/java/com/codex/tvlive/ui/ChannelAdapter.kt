@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.codex.tvlive.R
 import com.codex.tvlive.databinding.ItemChannelBinding
 import com.codex.tvlive.model.Channel
 
@@ -45,9 +44,6 @@ class ChannelAdapter(
 
         fun bind(channel: Channel, position: Int) {
             binding.channelName.text = channel.name
-            binding.channelGroup.text = channel.group.ifBlank {
-                binding.root.context.getString(R.string.default_group)
-            }
             applyState(binding.root, position == selectedPosition)
             binding.root.setOnClickListener {
                 val previous = selectedPosition
