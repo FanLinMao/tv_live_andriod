@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HPCTV</string>
+    <string name="default_playing_title">等待播放</string>
+    <string name="loading_title">请稍等，正在加载...</string>
+    <string name="channel_list_title">频道列表</string>
+    <string name="channel_list_hint">按 OK 键播放当前焦点频道</string>
+    <string name="no_channels">未读取到频道，请检查 assets/channels.m3u 内容。</string>
+    <string name="default_group">默认分组</string>
+    <string name="channel_count">共 %1$d 个频道</string>
+</resources>
