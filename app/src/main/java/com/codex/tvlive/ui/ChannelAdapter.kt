@@ -23,6 +23,22 @@ class ChannelAdapter(
 
     fun getSelectedPosition(): Int = selectedPosition
 
+    fun getItem(position: Int): Channel? {
+        return items.getOrNull(position)
+    }
+
+    fun getItemCountValue(): Int = items.size
+
+    fun setSelectedPosition(position: Int) {
+        if (position !in items.indices || position == selectedPosition) return
+        val previous = selectedPosition
+        selectedPosition = position
+        if (previous != RecyclerView.NO_POSITION) {
+            notifyItemChanged(previous)
+        }
+        notifyItemChanged(selectedPosition)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChannelViewHolder {
         val binding = ItemChannelBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -56,13 +72,14 @@ class ChannelAdapter(
             }
             binding.root.setOnFocusChangeListener { _, hasFocus ->
                 applyState(binding.root, hasFocus || position == selectedPosition)
-                binding.root.scaleX = if (hasFocus) 1.03f else 1f
-                binding.root.scaleY = if (hasFocus) 1.03f else 1f
+                binding.channelName.scaleX = if (hasFocus) 1.01f else 1f
+                binding.channelName.scaleY = if (hasFocus) 1.01f else 1f
             }
         }
 
         private fun applyState(view: View, active: Boolean) {
             view.isSelected = active
+            binding.channelName.isSelected = active
         }
     }
 }

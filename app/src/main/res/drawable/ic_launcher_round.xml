@@ -4,18 +4,29 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
     <path
-        android:fillColor="#5B7CFF"
+        android:fillColor="#5A7BFF"
         android:pathData="M54,54m-54,0a54,54 0 1,0 108,0a54,54 0 1,0 -108,0" />
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M19,24h70a8,8 0 0 1 8,8v40a8,8 0 0 1 -8,8H19a8,8 0 0 1 -8,-8V32a8,8 0 0 1 8,-8z" />
-    <path
-        android:fillColor="#5B7CFF"
-        android:pathData="M23,28h62a4,4 0 0 1 4,4v32a4,4 0 0 1 -4,4H23a4,4 0 0 1 -4,-4V32a4,4 0 0 1 4,-4z" />
+        android:fillColor="#D9E6FF"
+        android:pathData="M54,54m-54,0a54,54 0 1,0 108,0a54,54 0 1,0 -108,0"
+        android:fillAlpha="0.14" />
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M35,84h38a4,4 0 0 1 0,8H35a4,4 0 0 1 0,-8zM50,76h8v10h-8z" />
+        android:pathData="M20,22h68a9,9 0 0 1 9,9v38a9,9 0 0 1 -9,9H20a9,9 0 0 1 -9,-9V31a9,9 0 0 1 9,-9z" />
+    <path
+        android:fillColor="#5A7BFF"
+        android:pathData="M28,30h52a4,4 0 0 1 4,4v24a4,4 0 0 1 -4,4H28a4,4 0 0 1 -4,-4V34a4,4 0 0 1 4,-4z" />
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M30,42h2.5v4.5h3.2V42h2.5v12h-2.5v-5.2h-3.2V54H30zM40,42h6.2a2.8,2.8 0 0 1 2.8,2.8v1.7a2.8,2.8 0 0 1 -2.8,2.8h-3.7V54H40zM42.5,44.5v2.4h2.8a1,1 0 0 0 1,-1v-0.4a1,1 0 0 0 -1,-1zM50.5,44.5a2.5,2.5 0 0 1 2.5,-2.5h3.3a2.5,2.5 0 0 1 2.5,2.5v0.8h-2.5v-0.8H53v6.8h3.3v-0.8h2.5v0.8a2.5,2.5 0 0 1 -2.5,2.5H53a2.5,2.5 0 0 1 -2.5,-2.5zM60.5,42h8v2.4H66V54h-2.5v-9.6h-3zM69.8,42h2.7l2.2,7.8 2.2,-7.8h2.7L76.2,54h-2z" />
+        android:pathData="M34,67h40a4,4 0 0 1 0,8H34a4,4 0 0 1 0,-8zM50,59h8v9h-8z" />
+    <group
+        android:pivotX="60"
+        android:pivotY="44"
+        android:scaleX="0.82"
+        android:scaleY="0.82"
+        android:translateX="-4">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M32,38h2.5v6h4.5v-6h2.5v14h-2.5v-5.8h-4.5V52H32zM45,38h2.5v14H45zM47.5,38h5.5a2.5,2.5 0 0 1 2.5,2.5v1.8a2.5,2.5 0 0 1 -2.5,2.5h-5.5v-2.3h4.5a1,1 0 0 0 1,-1v-0.3a1,1 0 0 0 -1,-1h-4.5zM58,40.5a2.5,2.5 0 0 1 2.5,-2.5h5.5v2.5h-4.5a1,1 0 0 0 -1,1v7a1,1 0 0 0 1,1H66V52h-5.5A2.5,2.5 0 0 1 58,49.5zM68,38h9v2.5h-3.2V52h-2.5V40.5H68zM79,38h2.5l2.1,11 2.1,-11h2.5l-3.1,14h-3z" />
+    </group>
 </vector>
