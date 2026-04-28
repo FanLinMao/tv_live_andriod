@@ -29,6 +29,7 @@ import androidx.media3.exoplayer.hls.HlsMediaSource
 import androidx.media3.exoplayer.mediacodec.MediaCodecSelector
 import androidx.media3.extractor.ts.DefaultTsPayloadReaderFactory
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.codex.tvlive.data.ChannelSource
 import com.codex.tvlive.data.M3uRepository
 import com.codex.tvlive.databinding.ActivityMainBinding
 import com.codex.tvlive.model.Channel
@@ -189,21 +190,38 @@ class MainActivity : AppCompatActivity() {
         binding.errorOverlay.isVisible = false
         binding.currentChannel.text = getString(R.string.default_playing_title)
         loadDefaultChannels()
-        handler.postDelayed({
-            if (binding.loadingOverlay.isVisible) {
-                binding.loadingOverlay.isVisible = false
-            }
-        }, 2500L)
     }
 
     private fun loadDefaultChannels() {
-        channels = repository.loadDefaultChannels()
-        channelAdapter.submitList(channels)
-        binding.emptyView.isVisible = channels.isEmpty()
+        repository.loadDefaultChannels { result ->
+            channels = result.channels
+            channelAdapter.submitList(channels)
+            binding.emptyView.isVisible = channels.isEmpty()
 
-        if (channels.isNotEmpty()) {
-            currentChannelIndex = 0
-            playChannel(channels.first())
+            when (result.source) {
+                ChannelSource.LOCAL_FALLBACK -> {
+                    Toast.makeText(
+                        this,
+                        "远程节目单加载失败，已自动切换到本地节目单",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                ChannelSource.LOCAL_ONLY -> Unit
+
+                ChannelSource.EMPTY -> {
+                    hideLoadingOverlay()
+                }
+
+                ChannelSource.REMOTE -> Unit
+            }
+
+            if (channels.isNotEmpty()) {
+                currentChannelIndex = 0
+                playChannel(channels.first())
+            } else {
+                hideLoadingOverlay()
+            }
         }
     }
 
