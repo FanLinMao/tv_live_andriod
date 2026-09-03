@@ -4,21 +4,29 @@
     android:viewportWidth="320"
     android:viewportHeight="180">
     <path
-        android:fillColor="#5B7CFF"
+        android:fillColor="#5A7BFF"
         android:pathData="M0,0h320v180h-320z" />
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M48,32h224a18,18 0 0 1 18,18v72a18,18 0 0 1 -18,18H48a18,18 0 0 1 -18,-18V50a18,18 0 0 1 18,-18z" />
-    <path
-        android:fillColor="#5B7CFF"
-        android:pathData="M58,42h204a10,10 0 0 1 10,10v52a10,10 0 0 1 -10,10H58a10,10 0 0 1 -10,-10V52a10,10 0 0 1 10,-10z" />
+        android:fillColor="#D9E6FF"
+        android:pathData="M0,0h320v180h-320z"
+        android:fillAlpha="0.14" />
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M111,146h98a9,9 0 0 1 0,18H111a9,9 0 0 1 0,-18z" />
+        android:pathData="M67,34h186a20,20 0 0 1 20,20v60a20,20 0 0 1 -20,20H67a20,20 0 0 1 -20,-20V54a20,20 0 0 1 20,-20z" />
+    <path
+        android:fillColor="#5A7BFF"
+        android:pathData="M83,48h154a10,10 0 0 1 10,10v36a10,10 0 0 1 -10,10H83a10,10 0 0 1 -10,-10V58a10,10 0 0 1 10,-10z" />
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M152,132h16v16h-16z" />
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M89,68h6v10h9v-10h6v26h-6V84h-9v10h-6zM116,68h15a6,6 0 0 1 6,6v4a6,6 0 0 1 -6,6h-9v10h-6zM122,74v5h7a2,2 0 0 0 2,-2v-1a2,2 0 0 0 -2,-2zM142,74a6,6 0 0 1 6,-6h10v5h-10v16h10v5h-10a6,6 0 0 1 -6,-6zM163,68h19v5h-6.5v21h-6V73H163zM186,68h6l5,17 5,-17h6l-8.5,26h-5z" />
+        android:pathData="M118,136h84a7,7 0 0 1 0,14H118a7,7 0 0 1 0,-14zM155,124h10v13h-10z" />
+    <group
+        android:pivotX="170"
+        android:pivotY="76"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:translateX="-3">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M104,60h7v13h12v-13h7v33h-7V79h-12v14h-7zM136,60h7v33h-7zM143,60h13a5,5 0 0 1 5,5v4a5,5 0 0 1 -5,5h-13v-5h10a2,2 0 0 0 2,-2v-1a2,2 0 0 0 -2,-2h-10zM167,65a5,5 0 0 1 5,-5h13v5h-10a2,2 0 0 0 -2,2v18a2,2 0 0 0 2,2h10v5h-13a5,5 0 0 1 -5,-5zM190,60h21v5h-7v28h-7V65h-7zM216,60h7l6,28 6,-28h7l-9,33h-8z" />
+    </group>
 </vector>

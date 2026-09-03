@@ -5,6 +5,10 @@
     <string name="channel_list_title">频道列表</string>
     <string name="channel_list_hint">按 OK 键播放当前焦点频道</string>
     <string name="no_channels">未读取到频道，请检查 assets/channels.m3u 内容。</string>
-    <string name="default_group">默认分组</string>
-    <string name="channel_count">共 %1$d 个频道</string>
+    <string name="exit_app_tip">再按一次返回键退出应用</string>
+    <string name="playback_error_title">当前视频播放异常</string>
+    <string name="playback_error_generic">该直播源当前无法稳定播放，可能是源本身异常、编码参数特殊，或模拟器兼容性有限。建议换一个 H.264 源，或在真机电视盒子上测试。</string>
+    <string name="playback_error_live_window">直播流已落后于最新时间窗口，播放器正在自动跳回直播最新位置，请稍候重试。</string>
+    <string name="playback_error_emulator_compat">当前流是 %1$s，分辨率 %2$s。它不是典型 4K/HEVC 花屏场景，更像是模拟器对该 H.264 流的渲染兼容性问题。建议切换 Android TV 模拟器 Graphics 为 Software 或 Compatibility，或改用真机测试。</string>
+    <string name="now_playing_format">正在播放：%1$s</string>
 </resources>
