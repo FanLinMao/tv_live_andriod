@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">HPCTV</title>
+  <desc id="desc">A clean Android TV live streaming application banner</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="0.55" stop-color="#102e65"/>
+      <stop offset="1" stop-color="#2d63e7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="22%" r="70%">
+      <stop offset="0" stop-color="#7fb6ff" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#7fb6ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#020817" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="400" rx="34" fill="url(#background)"/>
+  <rect width="1200" height="400" rx="34" fill="url(#glow)"/>
+  <g opacity="0.12" fill="#d9e8ff">
+    <circle cx="84" cy="74" r="4"/><circle cx="130" cy="74" r="4"/>
+    <circle cx="176" cy="74" r="4"/><circle cx="222" cy="74" r="4"/>
+    <circle cx="84" cy="120" r="4"/><circle cx="130" cy="120" r="4"/>
+    <circle cx="176" cy="120" r="4"/><circle cx="222" cy="120" r="4"/>
+  </g>
+  <g transform="translate(92 78)" filter="url(#shadow)">
+    <rect width="304" height="198" rx="32" fill="#f7faff"/>
+    <rect x="22" y="22" width="260" height="142" rx="18" fill="#3671f4"/>
+    <text x="152" y="112" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="51" font-weight="700" letter-spacing="3">HPCTV</text>
+    <rect x="132" y="196" width="40" height="22" fill="#f7faff"/>
+    <rect x="91" y="215" width="122" height="20" rx="10" fill="#f7faff"/>
+  </g>
+  <g transform="translate(474 104)">
+    <text x="0" y="70" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="74" font-weight="750" letter-spacing="5">HPCTV</text>
+    <text x="2" y="118" fill="#b9d3ff" font-family="Segoe UI, Arial, sans-serif" font-size="25" letter-spacing="2">ANDROID TV LIVE PLAYER</text>
+    <rect x="2" y="151" width="550" height="1" fill="#a9c8ff" opacity="0.35"/>
+    <text x="2" y="195" fill="#e5efff" font-family="Microsoft YaHei, Segoe UI, sans-serif" font-size="24">远程节目单 · 全屏直播 · 遥控器友好</text>
+  </g>
+</svg>
