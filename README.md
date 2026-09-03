@@ -25,15 +25,15 @@
 
 ## ✨ 核心特性
 
-| 功能 | 说明 |
-| --- | --- |
-| 📺 全屏直播 | 基于 Media3 ExoPlayer 播放 HLS / M3U8 视频 |
+| 功能       | 说明 |
+|----------| --- |
+| 📺 全屏直播  | 基于 Media3 ExoPlayer 播放 HLS / M3U8 视频 |
 | ☁️ 远程节目单 | 通过 HTTP 或 HTTPS 加载服务器上的 M3U 文件 |
-| 🛟 自动回退 | 远程节目单不可用时自动读取本地 `channels.m3u` |
+| 🔙 自动回退  | 远程节目单不可用时自动读取本地 `channels.m3u` |
 | 🎮 遥控器适配 | 支持方向键切台、OK 键选台、返回键关闭抽屉 |
-| ⚡ 切台反馈 | 切换频道时显示加载遮罩，画面就绪后自动消失 |
+| ⚡ 切台反馈   | 切换频道时显示加载遮罩，画面就绪后自动消失 |
 | 🏷️ 播放提示 | 成功播放后显示 5 秒“正在播放：频道名” |
-| 🧭 频道抽屉 | 按 OK 键从左侧弹出半透明频道列表 |
+| 🧭 频道抽屉  | 按 OK 键从左侧弹出半透明频道列表 |
 | 🛡️ 防误退出 | 主播放页需连续按两次返回键才会退出 |
 
 ## 🎮 遥控器操作
@@ -191,7 +191,15 @@ tv-live-android/
 - 请仅使用你有权访问和分发的直播源，并遵守当地法律及内容版权要求。
 
 ---
-
+## 运行效果图
 <div align="center">
-  <sub>Built for the big screen with Kotlin and Media3.</sub>
+<img src="docs/assets/640_0.png" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_1.png" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_2.png" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_3.png" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_4.png" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_5.png" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_6.png" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_0.jfif" width="100%" alt="图片" /><br/>
+<img src="docs/assets/640_1.jfif" width="100%" alt="图片" />
 </div>
